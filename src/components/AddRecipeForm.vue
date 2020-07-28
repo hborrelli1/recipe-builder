@@ -14,12 +14,14 @@
         v-model="instructions"
         placeholder="instructions here..."
       ></textarea>
-      <input type="submit" value="Submit" class="btn">
+      <button :disabled="!formIsValid" class="btn">Submit</button>
     </form>
   </div>
 </template>
 
 <script>
+
+
   export default {
     name: 'AddRecipeForm',
     data() {
@@ -28,16 +30,34 @@
         instructions: ''
       }
     },
+    computed: {
+      titleIsValid() {
+        return !!this.title;
+      },
+      instructionsAreValid() {
+        return !!this.instructions;
+      },
+      formIsValid() {
+        return this.titleIsValid && this.instructionsAreValid;
+      }
+    },
     methods: {
       addRecipe(e) {
         e.preventDefault();
-        const newRecipe = {
-          title: this.title,
-          instructions: this.instructions
+
+        if (this.formIsValid) {
+          console.log('submitting form');
+          const newRecipe = {
+            title: this.title,
+            instructions: this.instructions,
+            id: Date.now()
+          }
+          this.$emit('add-recipe', newRecipe)
+          this.title = '';
+          this.instructions = '';
+        } else {
+          console.log('form not valid');
         }
-        this.$emit('add-recipe', newRecipe)
-        this.title = '';
-        this.instructions = '';
       }
     }
   }
@@ -63,7 +83,8 @@
   }
 
   input, 
-  textarea {
+  textarea,
+  button {
     margin-bottom:5px;
     height: 30px;
     padding:3px;
@@ -73,11 +94,16 @@
     height:50px;
   }
 
-  input[type='submit'] {
+  button {
     background-color:#333;
     color:#f4f4f4;
     font-weight:600;
     font-size:16px;
     border:0;
+  }
+
+  button:disabled {
+    opacity:.4;
+    cursor:no-drop;
   }
 </style>
