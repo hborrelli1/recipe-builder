@@ -14,6 +14,14 @@
 
 <style scoped>
   .recipe-item {
-    width:33.3%;
+    width:32%;
+    padding:20px;
+    background-color:#f4f4f4;
+    margin-right:2%;
+    margin-bottom:20px;
+  }
+  
+  .recipe-item:nth-of-type(3n) {
+    margin-right:0px;
   }
 </style>
