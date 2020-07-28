@@ -1,5 +1,8 @@
 <template>
   <div class="recipe-item">
+    <button
+      @click="$emit('del-recipe', recipe.id)"
+    >X</button>
     <h4>{{ recipe.title }}</h4>
     <p>{{ recipe.instructions }}</p>
   </div>
@@ -19,9 +22,21 @@
     background-color:#f4f4f4;
     margin-right:2%;
     margin-bottom:20px;
+    position:relative;
   }
   
   .recipe-item:nth-of-type(3n) {
     margin-right:0px;
+  }
+
+  button {
+    position:absolute;
+    top:10px;
+    right:10px;
+    border:0;
+  }
+
+  button:hover {
+    cursor:pointer;
   }
 </style>

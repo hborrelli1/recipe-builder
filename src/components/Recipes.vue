@@ -8,6 +8,7 @@
         v-for='recipe in recipes'
         v-bind:key='recipe.id'
         v-bind:recipe='recipe'
+        v-on:del-recipe="$emit('del-recipe', recipe.id)"
       />
     </div>
   </section>
