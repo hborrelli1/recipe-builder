@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <AddRecipeForm v-on:add-recipe="addRecipe" />
-    <Recipes v-bind:recipes="recipes" />
+    <Recipes 
+      v-bind:recipes="recipes" 
+      v-on:del-recipe="deleteRecipe"
+    />
   </div>
 </template>
 
@@ -38,7 +41,10 @@ export default {
     },
     methods: {
       addRecipe(newRecipe) {
-        this.recipes = [...this.recipes, newRecipe]
+        this.recipes = [...this.recipes, newRecipe];
+      },
+      deleteRecipe(id) {
+        this.recipes = this.recipes.filter(recipe => recipe.id !== id);
       }
     }
 }
