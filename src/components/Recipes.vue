@@ -26,15 +26,17 @@
 </script>
 
 <style scoped>
+  header {
+    text-align:center;
+    padding-top:20px;
+    border-bottom:1px solid #000;
+    margin-bottom:20px;
+  }
+
   .recipes-list {
     display: flex;
     flex-flow:wrap;
     justify-content: flex-start;
   }
 
-  header {
-    text-align:center;
-    padding-top:20px;
-    border-bottom:1px solid #000;
-  }
 </style>
