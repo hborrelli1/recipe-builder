@@ -1,15 +1,18 @@
 <template>
   <div class="home">
+    <AddRecipeForm v-on:add-recipe="addRecipe" />
     <Recipes v-bind:recipes="recipes" />
   </div>
 </template>
 
 <script>
+import AddRecipeForm from '../components/AddRecipeForm';
 import Recipes from '../components/Recipes';
 
 export default {
   name: 'Home',
   components: {
+    AddRecipeForm,
     Recipes
   },
   data() {
@@ -34,7 +37,9 @@ export default {
       }
     },
     methods: {
-
+      addRecipe(newRecipe) {
+        this.recipes = [...this.recipes, newRecipe]
+      }
     }
 }
 </script>
