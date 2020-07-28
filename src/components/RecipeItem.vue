@@ -3,8 +3,14 @@
     <button
       @click="$emit('del-recipe', recipe.id)"
     >X</button>
-    <h4>{{ recipe.title }}</h4>
-    <p>{{ recipe.instructions }}</p>
+    <router-link 
+      :to='{name: "RecipeDetails", params: {recipe: recipe, id: recipe.id}}'
+      class="recipe-link"
+    >
+      <img :src="recipe.url" :alt="recipe.title" />
+      <h4>{{ recipe.title }}</h4>
+      <!-- <p>{{ recipe.instructions }}</p> -->
+    </router-link>
   </div>
 </template>
 
@@ -27,6 +33,11 @@
   
   .recipe-item:nth-of-type(3n) {
     margin-right:0px;
+  }
+
+  .recipe-link {
+    text-decoration:none;
+    color:#333;
   }
 
   button {
