@@ -1,8 +1,10 @@
 <template>
   <article>
     <img :src="getImgSrc()" :alt="recipe.title" />
-    <h1>{{ recipe.title }}</h1>
-    <p>{{ recipe.instructions }}</p>
+    <div class="content">
+      <h1>{{ recipe.title }}</h1>
+      <p>{{ recipe.instructions }}</p>
+    </div>
   </article>
 </template>
 
@@ -31,5 +33,14 @@
 </script>
 
 <style scoped>
+  article {
+    width:100%;
+    max-width:1300px;
+    margin:20px auto 0px;
+    display: flex;
+  }
 
+  .content {
+    padding-left:20px;
+  }
 </style>
