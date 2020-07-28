@@ -1,8 +1,5 @@
 <template>
   <div class="recipe-item">
-    <button
-      @click="$emit('del-recipe', recipe.id)"
-    >X</button>
     <router-link 
       :to='{name: "RecipeDetails", params: {recipe: recipe, id: recipe.id}}'
       class="recipe-link"
@@ -11,6 +8,9 @@
       <h4>{{ recipe.title }}</h4>
       <!-- <p>{{ recipe.instructions }}</p> -->
     </router-link>
+    <button
+      @click="$emit('del-recipe', recipe.id)"
+    >Remove Recipe</button>
   </div>
 </template>
 
@@ -46,10 +46,20 @@
     color:#333;
   }
 
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+  }
+
+  h4 {
+    margin-bottom:10px;
+  }
+
   button {
-    position:absolute;
+    /* position:absolute;
     top:10px;
-    right:10px;
+    right:10px; */
     border:0;
   }
 

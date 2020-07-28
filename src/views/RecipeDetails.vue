@@ -1,6 +1,6 @@
 <template>
   <article>
-    <img :src="recipe.url" :alt="recipe.title" />
+    <img :src="getImgSrc()" :alt="recipe.title" />
     <h1>{{ recipe.title }}</h1>
     <p>{{ recipe.instructions }}</p>
   </article>
@@ -14,6 +14,12 @@
       return {
         id: this.$route.params.id,
         title: this.$route.params.title
+      }
+    },
+    methods: {
+      getImgSrc() {
+        let imageUrl = this.recipe.url ? this.recipe.url : require('../assets/' + 'default-placeholder-img.jpg');
+        return imageUrl;
       }
     },
     computed: {
