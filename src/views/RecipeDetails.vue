@@ -24,11 +24,6 @@
         return imageUrl;
       }
     },
-    computed: {
-      // recipe() {
-      //   // return store.recipes.find(recipe => recipe.slug === this.slug)
-      // }
-    }
   }
 </script>
 
@@ -38,6 +33,12 @@
     max-width:1300px;
     margin:20px auto 0px;
     display: flex;
+  }
+
+  img {
+    object-fit: cover;
+    width:526px;
+    height:375px;
   }
 
   .content {
