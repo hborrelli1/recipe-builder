@@ -1,17 +1,29 @@
 <template>
   <div class="recipe-item">
+    <router-link 
+      :to='{name: "RecipeDetails", params: {recipe: recipe, id: recipe.id}}'
+      class="recipe-link"
+    >
+      <img :src="getImgSrc()" :alt="recipe.title" />
+      <h4>{{ recipe.title }}</h4>
+      <!-- <p>{{ recipe.instructions }}</p> -->
+    </router-link>
     <button
       @click="$emit('del-recipe', recipe.id)"
-    >X</button>
-    <h4>{{ recipe.title }}</h4>
-    <p>{{ recipe.instructions }}</p>
+    >Remove Recipe</button>
   </div>
 </template>
 
 <script>
   export default {
     name: 'RecipeItem',
-    props: ['recipe']
+    props: ['recipe'],
+    methods: {
+      getImgSrc() {
+        let imageUrl = this.recipe.url ? this.recipe.url : require('../assets/' + 'default-placeholder-img.jpg');
+        return imageUrl;
+      }
+    }
   }
 </script>
 
@@ -29,14 +41,30 @@
     margin-right:0px;
   }
 
+  .recipe-link {
+    text-decoration:none;
+    color:#333;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+  }
+
+  h4 {
+    margin-bottom:10px;
+  }
+
   button {
-    position:absolute;
+    /* position:absolute;
     top:10px;
-    right:10px;
+    right:10px; */
     border:0;
   }
 
   button:hover {
     cursor:pointer;
+    text-decoration:underline;
   }
 </style>
