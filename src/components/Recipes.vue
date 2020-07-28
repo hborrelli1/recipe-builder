@@ -8,13 +8,21 @@
       v-for='recipe in recipes'
       v-bind:key='recipe.id'
     >
+      <RecipeItem 
+        v-bind:recipe='recipe'
+      />
     </div>
   </section>
 </template>
 
 <script>
+  import RecipeItem from './RecipeItem'
+
   export default {
     name: 'Recipes',
+    components: {
+      RecipeItem
+    },
     props: ['recipes']
   }
 </script>
