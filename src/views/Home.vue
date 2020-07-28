@@ -23,8 +23,9 @@ export default {
         recipes: [
           {
             id: 1,
-            title: 'Chicken Parm',
-            instructions: '1. Slow Cook chicken in crock pot. 2. Make sauce. 3. Combine and Enjoy.'
+            title: 'Banana and Blueberry French Toast',
+            instructions: '1. Beat egg, vanilla and cinnamon in shallow dish. Stir in milk. 2. Dip bread in egg mixture, turning to coat both sides evenly. 3. Cook bread slices on lightly greased nonstick griddle or skillet on medium heat until browned on both sides. Serve with Easy Spiced Syrup, if desired. 4. Add 1 teaspoon McCormick Pure Vanilla Extract and 1/4 teaspoon Ground Cinnamon to 1 cup pancake syrup; stir well to mix. Serve warm, if desired.',
+            url: 'https://i.ibb.co/pdLLBN7/joseph-gonzalez-zc-Ugjyq-Ewe8-unsplash.jpg" alt="joseph-gonzalez-zc-Ugjyq-Ewe8-unsplash'
           },
           {
             id: 2,
