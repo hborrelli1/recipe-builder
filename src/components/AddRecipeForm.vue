@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="recipes-form-container">
     <header>
       <h2>Create a New Recipe:</h2>
     </header>
@@ -44,5 +44,40 @@
 </script>
 
 <style scoped>
+  .recipes-form-container {
+    display: flex;
+    flex-flow:column;
+  }
 
+  header {
+    text-align:center;
+    padding:20px 0px;
+  }
+
+  form {
+    width:100%;
+    max-width:400px;
+    display: flex;
+    flex-flow:column;
+    margin:0 auto 50px;
+  }
+
+  input, 
+  textarea {
+    margin-bottom:5px;
+    height: 30px;
+    padding:3px;
+  }
+
+  textarea {
+    height:50px;
+  }
+
+  input[type='submit'] {
+    background-color:#333;
+    color:#f4f4f4;
+    font-weight:600;
+    font-size:16px;
+    border:0;
+  }
 </style>
