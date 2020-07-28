@@ -11,7 +11,7 @@
   export default {
     name: 'app',
     components: {
-      Header
+      Header,
     }
   }
 </script>
@@ -24,7 +24,6 @@
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #f4f4f4;
   }
 
   #nav {
