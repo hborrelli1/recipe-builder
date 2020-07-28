@@ -7,7 +7,7 @@
       :to='{name: "RecipeDetails", params: {recipe: recipe, id: recipe.id}}'
       class="recipe-link"
     >
-      <img :src="recipe.url" :alt="recipe.title" />
+      <img :src="getImgSrc()" :alt="recipe.title" />
       <h4>{{ recipe.title }}</h4>
       <!-- <p>{{ recipe.instructions }}</p> -->
     </router-link>
@@ -17,7 +17,13 @@
 <script>
   export default {
     name: 'RecipeItem',
-    props: ['recipe']
+    props: ['recipe'],
+    methods: {
+      getImgSrc() {
+        let imageUrl = this.recipe.url ? this.recipe.url : require('../assets/' + 'default-placeholder-img.jpg');
+        return imageUrl;
+      }
+    }
   }
 </script>
 
