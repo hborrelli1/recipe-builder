@@ -10,6 +10,12 @@
         v-model="title"
         name="title"
       />
+      <input 
+        type="text" 
+        placeholder="Image url..."
+        v-model="url"
+        name="url"
+      />
       <textarea
         v-model="instructions"
         placeholder="instructions here..."
@@ -27,6 +33,7 @@
     data() {
       return {
         title: '',
+        url: '',
         instructions: ''
       }
     },
@@ -50,7 +57,8 @@
           const newRecipe = {
             title: this.title,
             instructions: this.instructions,
-            id: Date.now()
+            id: Date.now(),
+            url: this.url
           }
           this.$emit('add-recipe', newRecipe)
           this.title = '';
