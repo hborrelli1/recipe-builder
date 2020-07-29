@@ -2,16 +2,18 @@
   <section>
     <header>
       <h3>Recipes:</h3>
-      <input 
-        type="text" 
-        placeholder="search for recipes..." 
-        v-model="searchQuery"
-        name="searchQuery"
-        v-on:keyup="setSearchQuery"
-      />
-      <button
-        v-on:click="resetSearchQuery"
-      >Clear</button>
+      <div class="search-bar">
+        <input 
+          type="text" 
+          placeholder="Search for recipes..." 
+          v-model="searchQuery"
+          name="searchQuery"
+          v-on:keyup="setSearchQuery"
+        />
+        <button
+          v-on:click="resetSearchQuery"
+        >Clear</button>
+      </div>
     </header>
     <div class='recipes-list'>
       <RecipeItem 
@@ -43,6 +45,7 @@
       setSearchQuery() {
         if (this.searchQuery) {
           let regex = RegExp((this.searchQuery), 'gi');
+          // this.$emit('set-query', regex)
           this.data = this.recipes.filter(recipe => regex.test(recipe.title) || regex.test(recipe.instructions));
         } else {
           this.data = this.recipes;
@@ -58,11 +61,26 @@
 
 <style scoped>
   header {
+    display: flex;
+    justify-content: space-between;
     text-align:center;
-    padding-top:20px;
+    padding:10px 0px;
     border-bottom:1px solid #000;
     margin-bottom:20px;
   }
+
+  .search-bar input,
+  .search-bar button {
+    height:40px;
+    font-size:16px;
+    padding:4px;
+  }
+
+  /* .search-bar button {
+    height:40px;
+    padding:0px 20px;
+    border:0;
+  } */
 
   .recipes-list {
     display: flex;
