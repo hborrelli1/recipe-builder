@@ -9,6 +9,9 @@
         name="searchQuery"
         v-on:keyup="setSearchQuery"
       />
+      <button
+        v-on:click="resetSearchQuery"
+      >Clear</button>
     </header>
     <div class='recipes-list'>
       <RecipeItem 
@@ -51,6 +54,10 @@
           console.log('normal recipes list');
           this.data = this.recipes;
         }
+      },
+      resetSearchQuery() {
+        this.searchQuery = '';
+        this.data = this.recipes;
       }
     },
     computed: {
