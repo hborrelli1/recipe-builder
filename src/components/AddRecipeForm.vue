@@ -62,6 +62,7 @@
           }
           this.$emit('add-recipe', newRecipe)
           this.title = '';
+          this.url = '';
           this.instructions = '';
         } else {
           console.log('form not valid');

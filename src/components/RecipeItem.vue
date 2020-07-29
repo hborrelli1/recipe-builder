@@ -6,7 +6,6 @@
     >
       <img :src="getImgSrc()" :alt="recipe.title" />
       <h4>{{ recipe.title }}</h4>
-      <!-- <p>{{ recipe.instructions }}</p> -->
     </router-link>
     <button
       @click="$emit('del-recipe', recipe.id)"
@@ -57,9 +56,6 @@
   }
 
   button {
-    /* position:absolute;
-    top:10px;
-    right:10px; */
     border:0;
   }
 

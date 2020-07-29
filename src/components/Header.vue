@@ -3,7 +3,6 @@
     <h1>Recipe Builder</h1>
     <div id="nav">
       <router-link to="/" v-if="isNotHomepage()" >Home</router-link>
-      <!-- <router-link to="/about">About</router-link> -->
     </div>
   </header>
 </template>
