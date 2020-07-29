@@ -1,7 +1,7 @@
 <template>
   <section>
     <header>
-      <h3>Recipes:</h3>
+      <h2>Recipes:</h2>
     </header>
     <div class='recipes-list'>
       <RecipeItem 
@@ -29,7 +29,7 @@
 <style scoped>
   header {
     text-align:center;
-    padding-top:20px;
+    padding:10px;
     border-bottom:1px solid #000;
     margin-bottom:20px;
   }
@@ -39,5 +39,4 @@
     flex-flow:wrap;
     justify-content: flex-start;
   }
-
 </style>

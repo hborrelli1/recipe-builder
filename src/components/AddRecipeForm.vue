@@ -62,6 +62,7 @@
           }
           this.$emit('add-recipe', newRecipe)
           this.title = '';
+          this.url = '';
           this.instructions = '';
         } else {
           console.log('form not valid');
@@ -108,6 +109,13 @@
     font-weight:600;
     font-size:16px;
     border:0;
+    transition: all .3s;
+  }
+
+  button:hover {
+    cursor:pointer;
+    opacity: .8;
+    transition: all .3s;
   }
 
   button:disabled {

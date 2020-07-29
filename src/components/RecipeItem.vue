@@ -6,7 +6,6 @@
     >
       <img :src="getImgSrc()" :alt="recipe.title" />
       <h4>{{ recipe.title }}</h4>
-      <!-- <p>{{ recipe.instructions }}</p> -->
     </router-link>
     <button
       @click="$emit('del-recipe', recipe.id)"
@@ -35,10 +34,18 @@
     margin-right:2%;
     margin-bottom:20px;
     position:relative;
+    transition: all .5s;
   }
   
   .recipe-item:nth-of-type(3n) {
     margin-right:0px;
+  }
+
+  .recipe-item:hover {
+    -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.42);
+    -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.42);
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.42);
+    transition: all .5s;
   }
 
   .recipe-link {
@@ -57,9 +64,6 @@
   }
 
   button {
-    /* position:absolute;
-    top:10px;
-    right:10px; */
     border:0;
   }
 
