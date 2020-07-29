@@ -66,6 +66,9 @@
         } else {
           console.log('form not valid');
         }
+      },
+      addInput() {
+        console.log('adding step');
       }
     }
   }

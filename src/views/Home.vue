@@ -4,6 +4,7 @@
     <Recipes 
       v-bind:recipes="recipes" 
       v-on:del-recipe="deleteRecipe"
+      v-on:set-query="setSearchQuery"
     />
   </div>
 </template>
@@ -36,9 +37,10 @@ export default {
           {
             id: 3,
             title: 'Stir Fry',
-            instructions: '1. Chop vegies. 2. Heat oil in Wok then add in vegies. 3. Saute vegies and add seasoning. 4. Crack an egg in cook till done.'
+            instructions: '1. Heat the oil in wok or large deep skillet on medium-high heat. Add onion and carrots; stir fry 2 minutes. Add remaining vegetables; stir fry 5 to 7 minutes or until vegetables are tender-crisp. 2. Add soy sauce, garlic powder and ginger; stir-fry until well blended. Sprinkle with sesame seed. Serve over cooked rice, if desired.'
           }
-        ]
+        ],
+        searchQuery: ''
       }
     },
     methods: {
@@ -47,6 +49,9 @@ export default {
       },
       deleteRecipe(id) {
         this.recipes = this.recipes.filter(recipe => recipe.id !== id);
+      },
+      setSearchQuery(term) {
+        this.searchQuery = term;
       }
     }
 }
