@@ -41,43 +41,16 @@
     },
     methods: {
       setSearchQuery() {
-        // let regex = `/${this.searchQuery}/gi`;
-        // this.data = this.data.find(recipe => recipe.title.matches(regex) || recipe.instructions.matches(regex));
         if (this.searchQuery) {
           let regex = RegExp((this.searchQuery), 'gi');
-
-          console.log('search query is valid');
           this.data = this.recipes.filter(recipe => regex.test(recipe.title) || regex.test(recipe.instructions));
-          console.log(this.data);
-          // return this.data.find(recipe => console.log(recipe));
         } else {
-          console.log('normal recipes list');
           this.data = this.recipes;
         }
       },
       resetSearchQuery() {
         this.searchQuery = '';
         this.data = this.recipes;
-      }
-    },
-    computed: {
-      recipesToDisplay() {
-        // if searchQuery is not empty, 
-        //    find all recipes that match any term.
-        // If not, use all recipes
-
-        // let regex = `/${this.searchQuery}/gi`;
-        // this.data = this.data.find(recipe => recipe.title.matches(regex) || recipe.instructions.matches(regex));
-
-        if (this.searchQuery) {
-          let regex = RegExp(`/${this.searchQuery}/gi`);
-          console.log('search query is valid');
-          return this.data.filter(recipe => regex.test(recipe.title) || regex.test(recipe.instructions));
-          // return this.data.find(recipe => console.log(recipe));
-        } else {
-          console.log('normal recipes list');
-          return this.recipes;
-        }
       }
     }
   }
